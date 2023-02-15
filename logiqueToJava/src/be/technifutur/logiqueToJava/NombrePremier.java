@@ -1,5 +1,7 @@
 package be.technifutur.logiqueToJava;
 
+import java.util.Arrays;
+
 /**
  * NombrePremier
  */
@@ -10,18 +12,19 @@ public class NombrePremier implements Runnable {
         int compteur = 0, nbr = 2;
         long before = 0, after = 0;
         boolean Premier = true;
-
+        final int TAILLE = 1000 ;
+		int nombre[] = new int[TAILLE];
         System.out.println("Nombres Premiers");
         before = System.currentTimeMillis();
 
-        while (compteur < 1000000) {
+        while (compteur < TAILLE) {
             for (int i = 2; i < nbr - 1 && Premier; i++) {
                 if (nbr % i == 0) {
                     Premier = false;
                 }
             }
             if (Premier) {
-                System.out.println(nbr);
+                nombre[compteur] = nbr;
                 compteur++;
 
             }
@@ -30,5 +33,6 @@ public class NombrePremier implements Runnable {
         }
         after = System.currentTimeMillis();
         System.out.println("Temps execution: " + (after - before));
+        System.out.println(Arrays.toString(nombre));
     }
 }
