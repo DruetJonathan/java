@@ -9,7 +9,9 @@ public class Main {
         int nombre = 0;
 
         Runnable[] exercices = {
-                new NombrePremier()
+                new NombrePremier(),
+                new CharacterExercice(),
+                new InversionTexte()
         };
         do {
             for (int i = 0; i < exercices.length; i++) {
