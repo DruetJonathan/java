@@ -11,7 +11,7 @@ public class Main {
         Runnable[] exercices = {
                 new NombrePremier(),
                 new CharacterExercice(),
-                new InversionTexte()
+                new cadreAutourTexte()
         };
         do {
             for (int i = 0; i < exercices.length; i++) {

@@ -12,5 +12,10 @@ public class Main {
         System.out.println(texte1.charAt(2));
         System.out.println(texte1.substring(2));
         System.out.println(texte1.substring(2, 6));
+        String multiLine = """
+                    je suis uno
+                    ligne2
+                """;
+        String.format("%s %n", lettre, texte1.length());
     }
 }
