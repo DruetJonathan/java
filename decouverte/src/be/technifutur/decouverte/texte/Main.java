@@ -1,6 +1,8 @@
 
 package be.technifutur.decouverte.texte;
 
+import java.time.Clock;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("javac -d bin -sourcepath src src\\be\\technifutur\\decouverte\\texte\\Main.java");
@@ -16,6 +18,6 @@ public class Main {
                     je suis uno
                     ligne2
                 """;
-        String.format("%s %n", lettre, texte1.length());
+        //String.format("%s %n", lettre, texte1.length());
     }
 }

@@ -20,7 +20,7 @@ public class cadreAutourTexte implements Runnable {
         String[] tabTexte = texte.split(" ");
         int positionMotPlusGrand = getPositionMotPlusLong(tabTexte);
 
-        for (int i = 0; i < tabTexte.length; i++) {
+        for (String s : tabTexte) {
             System.out.print("+");
             for (int j = 0; j < tabTexte[positionMotPlusGrand].length() + 2; j++) {
                 System.out.print("-");
@@ -28,8 +28,8 @@ public class cadreAutourTexte implements Runnable {
             System.out.print("+");
 
             System.out.println();
-            System.out.print("| " + tabTexte[i] + " ");
-            for (int j = 0; j < tabTexte[positionMotPlusGrand].length() - tabTexte[i].length(); j++) {
+            System.out.print("| " + s + " ");
+            for (int j = 0; j < tabTexte[positionMotPlusGrand].length() - s.length(); j++) {
                 System.out.print(" ");
             }
             System.out.println("|");
@@ -48,8 +48,8 @@ public class cadreAutourTexte implements Runnable {
         String[] tabTexte = texte.split(" ");
         System.out.print("+");
 
-        for (int i = 0; i < tabTexte.length; i++) {
-            for (int j = 0; j < tabTexte[i].length() + 2; j++) {
+        for (String item : tabTexte) {
+            for (int j = 0; j < item.length() + 2; j++) {
                 System.out.print("-");
             }
             System.out.print("+");
@@ -58,16 +58,16 @@ public class cadreAutourTexte implements Runnable {
 
         System.out.println();
         System.out.print("|");
-        for (int i = 0; i < tabTexte.length; i++) {
-            System.out.print(" " + tabTexte[i] + " ");
+        for (String value : tabTexte) {
+            System.out.print(" " + value + " ");
             System.out.print("|");
 
         }
         System.out.println();
         System.out.print("+");
 
-        for (int i = 0; i < tabTexte.length; i++) {
-            for (int j = 0; j < tabTexte[i].length() + 2; j++) {
+        for (String s : tabTexte) {
+            for (int j = 0; j < s.length() + 2; j++) {
                 System.out.print("-");
             }
             System.out.print("+");
