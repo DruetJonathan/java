@@ -17,16 +17,34 @@ public class Decouverte {
     }
 
     private static void testFloat() {
+        float test = 5.3f;
+
     }
 
     private static void testDouble() {
+        double test = 5.3;
+        System.out.println(test / 0);
+        
+        test = Long.MAX_VALUE;
+        for (int i = 0; i < 200; i++) {
+            test --;
+            long l = (long) test;
+            System.out.println(l);
+        }
     }
 
     private static void testChar() {
+        char car = 'r';
+        char car2 = 'a';
+        int res= car + car2;
+        car = '\n';
     }
 
     private static void testLong() {
-
+        long test = Long.MAX_VALUE; // milliard de milliard
+        test = 9_223_372_036_854_775_807L;
+        int val = 5;
+        test = test - val; // long - int => long - long
     }
 
     private static void testInteger() {

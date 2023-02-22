@@ -14,7 +14,8 @@ public class Main {
                 new cadreAutourTexte(),
                 new ChiffreDigitals(),
                 new RechercheDicoto(),
-                new binaryUtils()
+                new binaryUtils(),
+                new testListe()
         };
         do {
             for (int i = 0; i < exercices.length; i++) {
