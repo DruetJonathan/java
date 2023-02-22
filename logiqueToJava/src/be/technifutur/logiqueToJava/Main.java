@@ -13,6 +13,8 @@ public class Main {
                 new CharacterExercice(),
                 new cadreAutourTexte(),
                 new ChiffreDigitals(),
+                new RechercheDicoto(),
+                new binaryUtils()
         };
         do {
             for (int i = 0; i < exercices.length; i++) {
