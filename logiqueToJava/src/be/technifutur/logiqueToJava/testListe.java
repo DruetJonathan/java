@@ -4,6 +4,7 @@ public class testListe implements Runnable{
     public void run(){
         Liste liste = null;
         liste = ajouterDebut(15,liste);
+        liste = ajouterDebut(55,liste);
         System.out.println("Taille de ma liste: "+taille(liste));
         System.out.println("Valeur position 0: "+lire(liste,0));
         liste = remplacer(30,liste,0);
@@ -11,6 +12,8 @@ public class testListe implements Runnable{
         liste = ajouterFin(25,liste);
         System.out.println("Dernière valeur: "+lire(liste,taille(liste)-1));
         System.out.println("--------------------------");
+        liste = supprimer(liste,0);
+        liste = supprimer(liste,0);
         System.out.println(toString(liste));
     }
     private String toString(Liste list) {
@@ -63,5 +66,15 @@ public class testListe implements Runnable{
             cpt ++;
         }
         return cpt;
+    }
+    public Liste supprimer(Liste l, int position){
+        Liste temp = l;
+        int cpt = 0;
+        while (cpt + 1 < position){
+            temp = temp.suivant;
+            cpt ++;
+        }
+        temp.suivant = temp.suivant.suivant;
+        return l;
     }
 }
