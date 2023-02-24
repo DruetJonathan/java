@@ -4,9 +4,9 @@ import be.technifutur.decouverte.texte.poo.scenario1.Vaisseau;
 
 public class Scenario2 {
     public static void main(String[] args) {
-        VaisseauSecure v = new VaisseauSecure("XWing",-5);
+        VaisseauSecure v = new VaisseauSecure("XWing",-5,5);
         System.out.println(v.getNbMissile());
-        VaisseauSecure v2 = new VaisseauSecure("XWing",5);
+        VaisseauSecure v2 = new VaisseauSecure("XWing",5,5);
         System.out.println(v2.getNbMissile());
         v2.tirer();
         v2.tirer();
@@ -14,7 +14,14 @@ public class Scenario2 {
         v2.tirer();
         v2.tirer();
         v2.tirer();
-
+        if (!v2.addMissile(10)){
+            System.out.println("Depassement nombre max");
+        }
+        if (v2.addMissile(v2.getMaxMissile())){
+            System.out.println("Ajout de missile");
+        }
+        v2.tirer();
+        v2.tirer();
 
     }
 }
