@@ -1,12 +1,11 @@
 package be.technifutur.decouverte.texte.poo.scenario2;
 
 
-
 public class VaisseauSecure {
     private String nom;
     private int nbMissile;
 
-    VaisseauSecure(String nom, int nbMissile){
+    VaisseauSecure(String nom, int nbMissile) {
         this.nom = nom;
         this.nbMissile = nbMissile > 0 ? nbMissile : 0;
     }
@@ -28,12 +27,19 @@ public class VaisseauSecure {
     }
 
     public void tirer() {
-        if (this.getNbMissile() > 0){
-            this.setNbMissile(this.getNbMissile()-1);
+        if (deleteMissile(1)) {
             System.out.println("Pann");
-        }
-        else{
+        } else {
             System.out.println("plouf");
         }
+    }
+
+    private boolean deleteMissile(int nbMissile) {
+        boolean flag = false;
+        if (this.getNbMissile() > 0) {
+            this.setNbMissile(this.getNbMissile() - 1);
+            flag =  true;
+        }
+        return flag;
     }
 }

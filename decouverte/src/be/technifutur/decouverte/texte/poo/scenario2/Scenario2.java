@@ -8,6 +8,13 @@ public class Scenario2 {
         System.out.println(v.getNbMissile());
         VaisseauSecure v2 = new VaisseauSecure("XWing",5);
         System.out.println(v2.getNbMissile());
+        v2.tirer();
+        v2.tirer();
+        v2.tirer();
+        v2.tirer();
+        v2.tirer();
+        v2.tirer();
+
 
     }
 }
