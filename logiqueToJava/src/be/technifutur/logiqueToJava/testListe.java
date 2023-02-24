@@ -14,6 +14,12 @@ public class testListe implements Runnable{
         System.out.println("--------------------------");
         liste = supprimer(liste,0);
         liste = supprimer(liste,0);
+        liste = supprimer(liste,0);
+        System.out.println(toString(liste));
+        liste = inserer(5,liste,0);
+        liste = inserer(10,liste,1);
+        liste = inserer(10,liste,2);
+        liste = inserer(7,liste,0);
         System.out.println(toString(liste));
     }
     private String toString(Liste list) {
@@ -70,11 +76,34 @@ public class testListe implements Runnable{
     public Liste supprimer(Liste l, int position){
         Liste temp = l;
         int cpt = 0;
-        while (cpt + 1 < position){
-            temp = temp.suivant;
-            cpt ++;
+       if (taille(l) == 1){
+           return null;
+       }
+       else{
+           while (cpt + 1 < position){
+               temp = temp.suivant;
+               cpt ++;
+           }
+           temp.suivant = temp.suivant.suivant;
+           return l;
+       }
+    }
+    public Liste inserer(int valeur,Liste l,int position){
+        if (position == 0){
+            l = ajouterDebut(valeur,l);
         }
-        temp.suivant = temp.suivant.suivant;
+        else {
+            Liste temp = new Liste();
+            temp.valeur = valeur;
+            Liste parcourList = l;
+            int cpt = 0;
+            while (cpt < position - 1){
+                parcourList = parcourList.suivant;
+                cpt ++;
+            }
+            temp.suivant = parcourList.suivant;
+            parcourList.suivant = temp;
+        }
         return l;
     }
 }

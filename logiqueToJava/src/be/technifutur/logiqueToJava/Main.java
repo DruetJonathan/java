@@ -15,7 +15,8 @@ public class Main {
                 new ChiffreDigitals(),
                 new RechercheDicoto(),
                 new binaryUtils(),
-                new testListe()
+                new testListe(),
+                new TriParTas()
         };
         do {
             for (int i = 0; i < exercices.length; i++) {
