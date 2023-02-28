@@ -23,5 +23,10 @@ public class Scenario2 {
         v2.tirer();
         v2.tirer();
 
+        v2.decolage();
+        v2.decolage();
+        v2.atterir();
+        v2.atterir();
+        System.out.println("Nombre d'instance: "+v2.getInstanceCount());
     }
 }

@@ -2,14 +2,42 @@ package be.technifutur.decouverte.texte.poo.scenario2;
 
 
 public class VaisseauSecure {
+    private boolean enVol;
     private int maxMissile;
     private String nom;
     private int nbMissile;
+    private static int instanceCount = 0;
+
 
     VaisseauSecure(String nom, int nbMissile,int maxMissile) {
-        this.nom = nom;
+        this.nom = (nom != null && !nom.isBlank()) ? nom : "Default";
         this.nbMissile = nbMissile > 0 ? nbMissile : 0;
         this.maxMissile = maxMissile;
+        this.enVol = false;
+    }
+    public int getInstanceCount(){
+        return instanceCount;
+    }
+    public void decolage(){
+
+        if (this.enVol){
+            System.out.println("Déjà en vole");
+        }
+        else {
+            System.out.println("DECOLAGEEEE");
+            instanceCount++;
+            this.enVol = !this.enVol;
+        }
+    }
+    public void atterir(){
+        if (this.enVol == false){
+            System.out.println("Déjà au sol");
+        }
+        else {
+            System.out.println("Atterissageeee");
+            instanceCount--;
+            this.enVol = !this.enVol;
+        }
     }
 
     public int getNbMissile() {
