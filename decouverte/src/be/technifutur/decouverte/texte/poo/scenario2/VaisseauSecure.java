@@ -27,7 +27,7 @@ public class VaisseauSecure {
     public void setNbMissile(int nbMissile) {
         this.nbMissile = nbMissile;
     }
-    
+
     public void setMaxMissile(int maxMissile) {
         this.maxMissile = maxMissile;
     }
