@@ -6,7 +6,7 @@ public class Scenario4 {
                 new Soldat("Leon"),
                 new Jedi("Luc"),
                 new Sith("DarkVador"),
-                new Clone("Bernard"),
+                new Clone()
         };
         Force f;
         for (Personnage p : pers) {

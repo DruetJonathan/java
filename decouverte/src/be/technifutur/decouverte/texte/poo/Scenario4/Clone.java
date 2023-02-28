@@ -1,8 +1,8 @@
 package be.technifutur.decouverte.texte.poo.Scenario4;
 
 public class Clone extends Empire{
-    Clone(String nom) {
-        super(nom);
+    Clone() {
+        super("Clone");
     }
     @Override
     public void combattre(){
