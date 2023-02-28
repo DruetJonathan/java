@@ -1,7 +1,7 @@
 package be.technifutur.decouverte.texte.poo.scenario3;
 
 
-public class VaisseauAncetre {
+public abstract class VaisseauAncetre {
     private boolean enVol;
     private int maxMissile;
     private String nom;
@@ -85,4 +85,33 @@ public class VaisseauAncetre {
         }
         return flag;
     }
+
+    @Override
+    public String toString() {
+        return "VaisseauAncetre{" +
+                "enVol=" + enVol +
+                ", maxMissile=" + maxMissile +
+                ", nom='" + nom + '\'' +
+                ", nbMissile=" + nbMissile +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        VaisseauAncetre that = (VaisseauAncetre) o;
+
+        if (maxMissile != that.maxMissile) return false;
+        return nom.equals(that.nom);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = maxMissile;
+        result = 31 * result + nom.hashCode();
+        return result;
+    }
+    public abstract void afficheCamp();
 }

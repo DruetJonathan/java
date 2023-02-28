@@ -11,4 +11,9 @@ public class Xwing extends VaisseauAncetre{
         }
         return name;
     }
+
+    @Override
+    public void afficheCamp() {
+        System.out.println("Mechant");
+    }
 }
