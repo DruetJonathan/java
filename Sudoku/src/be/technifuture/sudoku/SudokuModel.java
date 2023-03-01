@@ -55,7 +55,7 @@ public interface SudokuModel {
      * @param value la valeur à check si elle est valide
      * @return true si la valeur est valide sinon false
      */
-    boolean isValueValid(int value);
+    boolean isValueValid(char value);
     /**
      * Verifie si une case est vide
      * @return true si la case est vide sinon false

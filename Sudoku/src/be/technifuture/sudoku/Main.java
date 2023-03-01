@@ -17,8 +17,10 @@ public class Main {
         System.out.println("# Clear de la valeur 5 à la position 0,0#");
         s4x4.clearCell(0,0);
         System.out.println("-Cellule à la position 0,0 est vide: "+s4x4.isEmpty(0,0));
-        System.out.println("-Value valid (2): "+s4x4.isValueValid(2));
-        System.out.println("-Value valid (-1): "+s4x4.isValueValid(-1));
+        System.out.println("-Value valid (2): "+s4x4.isValueValid('2'));
+        System.out.println("-Value valid (-1): "+s4x4.isValueValid('8'));
+        System.out.println("-isPosition valid -1,-1: "+s4x4.isPositionValid(-1,-1));
+        System.out.println("-isPosition valid 2,2: "+s4x4.isPositionValid(2,2));
 
         System.out.println("------------------ 9x9 ------------------");
         SudokuModel9x9 s9x9 = new SudokuModel9x9();
@@ -30,7 +32,9 @@ public class Main {
         System.out.println("# Clear de la valeur 5 à la position 0,0#");
         s9x9.clearCell(0,0);
         System.out.println("-Cellule à la position 0,0 est vide: "+s9x9.isEmpty(0,0));
-        System.out.println("-Value valid (2): "+s9x9.isValueValid(2));
-        System.out.println("-Value valid (10): "+s9x9.isValueValid(10));
+        System.out.println("-Value valid (2): "+s9x9.isValueValid('2'));
+        System.out.println("-Value valid (10): "+s9x9.isValueValid('a'));
+        System.out.println("-isPosition valid -1,-1: "+s9x9.isPositionValid(-1,-1));
+        System.out.println("-isPosition valid 2,2: "+s9x9.isPositionValid(2,2));
     }
 }

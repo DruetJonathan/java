@@ -39,18 +39,23 @@ public class SudokuModel4x4 implements SudokuModel {
     @Override
     public boolean isPositionValid(int lineNumber, int columnNumber) {
         // regarde si la valeur peut etre posé à cette position
-
-        return false;
+        boolean flag = true;
+        if ((lineNumber >= gameBoard.length || lineNumber <= 0)
+                && (columnNumber >= gameBoard.length || columnNumber <= 0))
+        {
+            flag = false;
+        }
+        return flag;
     }
 
     @Override
-    public boolean isValueValid(int value) {
+    public boolean isValueValid(char value) {
         // regarde si la valeur est acceptable
         char[] tmp = {'1','2','3','4'};
         boolean flag = false;
         int i = 0;
         while (!flag && i < tmp.length){
-            if ((int)tmp[i]/31+1 == value) flag = true;
+            if (tmp[i] == value) flag = true;
             i++;
         }
         return flag;
