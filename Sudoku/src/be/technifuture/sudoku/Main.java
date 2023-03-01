@@ -1,9 +1,14 @@
 package be.technifuture.sudoku;
 
+import be.technifuture.sudoku.sudoku4x4.ModelFactory4x4;
 import be.technifuture.sudoku.sudoku4x4.SudokuModel4x4;
 import be.technifuture.sudoku.sudoku4x4.SudokuVue4x4;
+import be.technifuture.sudoku.sudoku9x9.ModelFactory9x9;
 import be.technifuture.sudoku.sudoku9x9.SudokuModel9x9;
 import be.technifuture.sudoku.sudoku9x9.SudokuVue9x9;
+import be.technifuture.sudoku.sudokuSamourai.ModelFactorySamourai;
+import be.technifuture.sudoku.sudokuSamourai.SudokuSamourai;
+import be.technifuture.sudoku.sudokuSamourai.SudokuVueSamourai;
 
 public class Main {
     public static void main(String[] args) {
@@ -48,5 +53,28 @@ public class Main {
         s4x4.setValue(0,0,'2');
         SudokuVue4x4 sv4x4 = new SudokuVue4x4(s4x4);
         System.out.println(sv4x4.getScreen());
+
+        SudokuSamourai sm = new SudokuSamourai();
+        sm.setValue(0,0,'5');
+        System.out.println("Test SudokuView Samourai");
+        SudokuVueSamourai svs = new SudokuVueSamourai(sm);
+        System.out.println(svs.getScreen());
+
+        ModelFactory4x4 mf4x4 = new ModelFactory4x4();
+        s4x4 = mf4x4.getModel("ressource\\4x4.txt");
+        sv4x4 = new SudokuVue4x4(s4x4);
+        System.out.println(sv4x4.getScreen());
+
+        ModelFactory9x9 mf9x9 = new ModelFactory9x9();
+        s9x9 = mf9x9.getModel("ressource\\9x9.txt");
+        sv9x9 = new SudokuVue9x9(s9x9);
+        System.out.println(sv9x9.getScreen());
+
+        ModelFactorySamourai mfs = new ModelFactorySamourai();
+        sm = mfs.getModel("ressource\\Samourai.txt");
+        svs = new SudokuVueSamourai(sm);
+        System.out.println(svs.getScreen());
+
+
     }
 }
