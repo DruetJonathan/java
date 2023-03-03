@@ -42,4 +42,6 @@ public class SudokuVue9x9 implements SudokuView {
     public SudokuModel getModel() {
         return model;
     }
+
+
 }

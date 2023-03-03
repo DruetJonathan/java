@@ -11,7 +11,7 @@ import be.technifuture.sudoku.sudokuSamourai.SudokuSamourai;
 import be.technifuture.sudoku.sudokuSamourai.SudokuVueSamourai;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) {/*
         System.out.println("Sudoku");
         SudokuModel4x4 s4x4 = new SudokuModel4x4();
         System.out.println("------------------ 4x4 ------------------");
@@ -60,21 +60,22 @@ public class Main {
         SudokuVueSamourai svs = new SudokuVueSamourai(sm);
         System.out.println(svs.getScreen());
 
+        //////////////////////////////////////////////////////////////
         ModelFactory4x4 mf4x4 = new ModelFactory4x4();
         s4x4 = mf4x4.getModel("ressource\\4x4.txt");
-        sv4x4 = new SudokuVue4x4(s4x4);
-        System.out.println(sv4x4.getScreen());
+        System.out.println(mf4x4.getVue("ressource\\4x4.txt").getScreen());
 
         ModelFactory9x9 mf9x9 = new ModelFactory9x9();
         s9x9 = mf9x9.getModel("ressource\\9x9.txt");
-        sv9x9 = new SudokuVue9x9(s9x9);
-        System.out.println(sv9x9.getScreen());
+        System.out.println(mf9x9.getVue("ressource\\9x9.txt").getScreen());
 
         ModelFactorySamourai mfs = new ModelFactorySamourai();
         sm = mfs.getModel("ressource\\Samourai.txt");
-        svs = new SudokuVueSamourai(sm);
-        System.out.println(svs.getScreen());
-
-
+        System.out.println(mfs.getVue("ressource\\Samourai.txt").getScreen());
+*/
+        String FileName = "ressource\\4x4.txt";
+        ModelFactory4x4 mf4x4 = new ModelFactory4x4();
+        SudokuControler controler = new SudokuControler(mf4x4);
+        controler.start(FileName);
     }
 }

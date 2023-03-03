@@ -34,15 +34,16 @@ public class SudokuSamourai implements SudokuModel {
     }
 
     @Override
-    public boolean isPositionValid(int lineNumber, int columnNumber) {
+    public boolean isPositionValid(int line, int col) {
         // regarde si la valeur peut etre posé à cette position
-        boolean flag = true;
-        if ((lineNumber >= gameBoard.length || lineNumber <= 0)
-                && (columnNumber >= gameBoard.length || columnNumber <= 0))
-        {
-            flag = false;
+        if ((line >= 0 && col >= 0 && line < 9 && col < 9) ||
+                (line >= 0 && col >= 12 && line < 9 && col < 9+12) ||
+                (line >= 6 && col >= 6 && line < 9+6 && col < 9+6) ||
+                (line >= 12 && col >= 0 && line < 9+12 && col < 9) ||
+                (line >= 12 && col >= 12 && line < 9+12 && col < 9+12)){
+            return true;
         }
-        return flag;
+        return false;
     }
 
     @Override

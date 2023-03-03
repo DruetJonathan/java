@@ -3,6 +3,7 @@ package be.technifuture.sudoku.sudoku9x9;
 import be.technifuture.sudoku.ModelFactory;
 import be.technifuture.sudoku.SudokuModel;
 import be.technifuture.sudoku.sudoku4x4.SudokuModel4x4;
+import be.technifuture.sudoku.sudoku4x4.SudokuVue4x4;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -28,5 +29,9 @@ public class ModelFactory9x9 implements ModelFactory {
             System.out.println("Le fichier n'existe pas.");
         };
         return s9x9;
+    }
+    @Override
+    public SudokuVue9x9 getVue(String FileName) {
+        return new SudokuVue9x9(this.getModel(FileName));
     }
 }

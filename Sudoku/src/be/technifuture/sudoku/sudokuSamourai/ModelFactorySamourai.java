@@ -3,6 +3,7 @@ package be.technifuture.sudoku.sudokuSamourai;
 import be.technifuture.sudoku.ModelFactory;
 import be.technifuture.sudoku.SudokuModel;
 import be.technifuture.sudoku.sudoku9x9.SudokuModel9x9;
+import be.technifuture.sudoku.sudoku9x9.SudokuVue9x9;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -15,7 +16,7 @@ public class ModelFactorySamourai implements ModelFactory {
         File file = new File(FileName);
         String ligne = "";
         int j = 0;
-        try(Scanner scanner = new Scanner(file);){
+        try(Scanner scanner = new Scanner(file)){
             while (scanner.hasNextLine()){
                 ligne = scanner.nextLine();
                 for (int i = 0; i < 21; i++) {
@@ -28,5 +29,9 @@ public class ModelFactorySamourai implements ModelFactory {
             System.out.println("Le fichier n'existe pas.");
         };
         return sm;
+    }
+    @Override
+    public SudokuVueSamourai getVue(String FileName) {
+        return new SudokuVueSamourai(this.getModel(FileName));
     }
 }
